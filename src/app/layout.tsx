@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Header from "../Components/Layout/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
     >
       <body className="font-primary">
         <main className="min-h-[calc(100vh-160px)]">
+          <Header />
           {children}
         </main>
       </body>
