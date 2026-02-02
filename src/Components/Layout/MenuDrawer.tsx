@@ -64,7 +64,7 @@ const MenuDrawer = ({ open, onClose, navItems }: MenuDrawerProps) => {
             <div className="h-full overflow-y-auto">
               <div className="min-h-full p-5 md:p-8 flex flex-col gap-8 md:gap-10">
                 {/* Header */}
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-start ">
                   <div className="relative h-12 w-12 md:h-16 md:w-16">
                     <Image
                       src={logo}
@@ -93,7 +93,7 @@ const MenuDrawer = ({ open, onClose, navItems }: MenuDrawerProps) => {
                   <div className="space-y-1">
                     <button
                       onClick={() => toggleDropdown("perfume")}
-                      className="w-full flex items-center justify-between py-1 md:py-2 px-4 rounded-sm bg-muted/50 hover:bg-muted/50 transition-colors group"
+                      className="w-full flex items-center justify-between py-1.5 md:py-2 px-4 rounded-sm bg-muted/50 hover:bg-muted/50 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
                         <Sparkles size={20} className="text-foreground" />
@@ -139,7 +139,7 @@ const MenuDrawer = ({ open, onClose, navItems }: MenuDrawerProps) => {
                   <div className="space-y-1">
                     <button
                       onClick={() => toggleDropdown("garment")}
-                      className="w-full flex items-center justify-between py-1 md:py-2 px-4 rounded-md bg-muted/50 hover:bg-muted/50 transition-colors group"
+                      className="w-full flex items-center justify-between py-1.5 md:py-2 px-4 rounded-md bg-muted/50 hover:bg-muted/50 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
                         <Shirt size={20} className="text-foreground" />
