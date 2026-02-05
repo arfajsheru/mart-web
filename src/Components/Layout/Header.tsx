@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, Search, Heart } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -17,46 +17,59 @@ const navItems = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // 🔹 Detect scroll
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <header className="w-full h-20 px-6 md:px-10 bg-background relative z-20">
+      <header
+        className={`
+          fixed top-0 left-0 w-full h-20 px-6 md:px-10
+          z-50 
+          transition-all duration-300
+          ${
+            scrolled
+              ? "bg-background/95 backdrop-blur shadow-sm text-foreground"
+              : "bg-transparent text-white"
+          }
+        `}
+      >
         <div className="mx-auto flex h-full items-center justify-between">
           {/* ================= LEFT ================= */}
           <div className="flex items-center gap-4">
-            {/* Desktop Menu Icon */}
             <motion.button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="hidden md:inline-flex text-foreground"
+              className="hidden md:inline-flex"
               whileTap={{ scale: 0.95 }}
             >
               <Menu size={20} strokeWidth={1.25} />
             </motion.button>
 
-            {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="relative h-10 w-10 md:h-14 md:w-14">
-                <Image
-                  src={logo}
-                  alt="Leiuce Diaona"
-                  fill
-                  priority
-                  className="object-contain"
-                />
+              <div className="text-5xl font-ibm">
+               <h1>LD</h1>
               </div>
             </Link>
           </div>
 
           {/* ================= DESKTOP RIGHT ================= */}
           <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-2 border-b w-64">
-              <Search size={16} className="text-muted-foreground" />
+            <div className="flex items-center gap-2 border-b border-current/30 w-64">
+              <Search size={16} className="opacity-70" />
               <input
                 type="text"
                 placeholder="Search..."
-                className="bg-transparent py-1 text-xs font-secondary uppercase focus:outline-none w-full"
+                className="bg-transparent py-1 text-xs font-secondary uppercase focus:outline-none w-full placeholder:opacity-60"
               />
             </div>
 
@@ -70,10 +83,10 @@ const Header = () => {
                 return (
                   <Link key={item.href} href={item.href}>
                     <motion.span
-                      className={`text-xs font-primary cursor-pointer ${
+                      className={`text-xs cursor-pointer transition-colors ${
                         isActive
-                          ? "text-foreground"
-                          : "text-muted-foreground hover:text-foreground"
+                          ? "opacity-100"
+                          : "opacity-70 hover:opacity-100"
                       }`}
                       whileHover={{ y: -2 }}
                     >
@@ -87,17 +100,12 @@ const Header = () => {
 
           {/* ================= MOBILE RIGHT ================= */}
           <div className="flex md:hidden items-center gap-4">
-            {/* Favorite */}
             <Heart size={20} strokeWidth={1.25} />
-
-            {/* Search */}
             <Search size={20} strokeWidth={1.25} />
 
-            {/* Menu */}
             <motion.button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="text-foreground"
               whileTap={{ scale: 0.9 }}
             >
               <Menu size={20} strokeWidth={1.25} />

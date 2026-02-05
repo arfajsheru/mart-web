@@ -33,6 +33,8 @@
   --font-title: var(--font-playfair);
   --font-primary: var(--font-inter);
   --font-secondary: var(--font-dm-sans);
+  --font-hero: var(--font-sixcaps);
+  --font-ibm: var(--font-ibm-plex-sans)
 }
 
 /* =====================================================
@@ -86,6 +88,8 @@
   --font-title: var(--font-title);
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
+  --font-hero: var(--font-hero);
+  --font-ibm: var(--font-ibm)
 }
 
 /* =====================================================
@@ -96,3 +100,6 @@ body {
   color: rgb(var(--foreground));
   font-family: var(--font-primary), system-ui, sans-serif;
 }
+
+
+

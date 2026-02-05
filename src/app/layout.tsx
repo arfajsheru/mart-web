@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans, Playfair_Display } from "next/font/google";
+import { Inter, DM_Sans, Playfair_Display, Six_Caps, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "../Components/Layout/Header";
 
@@ -21,6 +21,20 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+
+const sixcaps = Six_Caps({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-sixcaps",
+  display: "swap",
+});
+
+const ibmplexsans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "AUFMART | Wholesale Perfume Manufacturer",
@@ -39,13 +53,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${dmSans.variable} ${playfair.variable}`}
+      className={`${inter.variable} ${dmSans.variable} ${playfair.variable} ${sixcaps.variable} ${ibmplexsans.variable}`}
     >
       <body className="font-primary">
-        <main className="min-h-[calc(100vh-160px)]">
-          <Header />
-          {children}
-        </main>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
