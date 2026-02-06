@@ -1,5 +1,5 @@
 import Image from "next/image";
-import clothe1 from "../../images/clothing1.png";
+import clothe1 from "../../images/image1.png";
 import AnimatedText from "../Motion/AnimationText";
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl flex flex-col items-center gap-6 md:gap-8">
@@ -23,7 +23,7 @@ const Hero = () => {
         <AnimatedText delay={0}>
           <h1
             className="font-hero uppercase text-white leading-28 sm:leading-[0.9]
-            text-[105px] sm:text-6xl md:text-8xl lg:text-[13rem]"
+            text-[105px] sm:text-6xl md:text-8xl lg:text-[10rem]"
           >
             leiuce diaona perfumes
           </h1>
@@ -61,6 +61,7 @@ const Hero = () => {
           </button>
         </AnimatedText>
       </div>
+
     </section>
   );
 };
