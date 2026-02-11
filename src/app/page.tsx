@@ -1,11 +1,12 @@
 import Hero from "../Components/Home/Hero";
-import Section from "../Components/Home/Section2"
+import NewDrop from "../Components/Home/NewDrop";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Section />
+      {/* <Section /> */}
+      <NewDrop />
     </>
   );
 }

@@ -4,7 +4,7 @@ import AnimatedText from "../Motion/AnimationText";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 md:px-10 text-center">
+    <section className="relative min-h-screen flex items-end justify-center overflow-hidden px-4 md:px-10 text-center pb-20 sm:pb-24 md:pb-28 lg:pb-28">
       {/* Background Image */}
       <Image
         src={clothe1}
@@ -15,24 +15,24 @@ const Hero = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl flex flex-col items-center gap-6 md:gap-8">
+      <div className="relative  z-10 max-w-6xl flex flex-col  gap-6 md:gap-8">
         {/* Brand Title */}
         <AnimatedText delay={0}>
           <h1
-            className="font-hero uppercase text-white leading-28 sm:leading-[0.9]
-            text-[105px] sm:text-6xl md:text-8xl lg:text-[10rem]"
+            className="font-secondary uppercase text-white sm:leading-[0.9]
+            text-4xl sm:text-6xl md:text-8xl lg:text-[5rem]"
           >
-            leiuce diaona perfumes
+            Louice diana perfumes
           </h1>
         </AnimatedText>
 
         {/* Subtitle */}
         <AnimatedText delay={0.2}>
           <h2
-            className="font-ibm text-white/90
+            className="font-ibm text-muted
             text-base sm:text-lg md:text-2xl lg:text-3xl"
           >
             We Supply Quality Perfumes in Bulk for Retailers and Distributors
@@ -42,7 +42,7 @@ const Hero = () => {
         {/* Tagline */}
         <AnimatedText delay={0.4}>
           <p
-            className="font-secondary text-white/70
+            className="font-secondary text-muted
             text-sm sm:text-base md:text-lg lg:text-xl leading-none"
           >
             “Quality and Care in Every Scent”
@@ -61,7 +61,6 @@ const Hero = () => {
           </button>
         </AnimatedText>
       </div>
-
     </section>
   );
 };
