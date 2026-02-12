@@ -1,18 +1,54 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function AboutPage() {
-  // Smooth, luxury animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
+  // Smooth luxury animations
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.9,
-        ease: [0.25, 0.4, 0.25, 1],
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const fadeInLeft: Variants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const fadeInRight: Variants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const scaleIn: Variants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -28,71 +64,63 @@ export default function AboutPage() {
     },
   };
 
-  const scaleIn = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    },
-  };
-
   const services = [
     {
-      title: "Bulk Perfume Manufacturing",
+      icon: "🏭",
+      title: "Bulk Manufacturing",
       description:
-        "High-volume production with unwavering quality standards. From thousands to millions of units, we scale seamlessly with your business growth.",
+        "High-volume production capabilities from 1,000 to 1,000,000+ units with consistent quality across every batch.",
     },
     {
+      icon: "🏷️",
       title: "Private Label Solutions",
       description:
-        "Complete white-label fragrance development from conceptualization to market-ready products. Your brand, our manufacturing excellence.",
+        "Complete white-label development from concept to market. Your brand vision, our manufacturing mastery.",
     },
     {
-      title: "Custom Fragrance Development",
+      icon: "🎨",
+      title: "Custom Formulations",
       description:
-        "Bespoke scent creation tailored to your unique brand identity. Our master perfumers bring your olfactory vision to life.",
+        "Bespoke scent creation with master perfumers. Unique fragrances tailored exclusively to your brand DNA.",
     },
     {
-      title: "Corporate & Retail Supply",
+      icon: "📦",
+      title: "End-to-End Packaging",
       description:
-        "Dependable supply partnerships for retailers, boutiques, and corporate clients with flexible MOQs and consistent delivery.",
+        "Premium bottle design, custom boxes, and complete branding solutions that elevate your product presentation.",
     },
   ];
 
   const processSteps = [
     {
       number: "01",
-      title: "Consultation & Requirement Analysis",
+      title: "Discovery & Consultation",
       description:
-        "Deep-dive discovery sessions to understand your brand essence, market positioning, and fragrance specifications.",
+        "Deep-dive sessions to understand your brand identity, target market, and fragrance vision. We explore your goals and define success metrics together.",
     },
     {
       number: "02",
-      title: "Fragrance Creation & Sampling",
+      title: "Scent Development",
       description:
-        "Our perfumers craft custom formulations with iterative sampling until we achieve your perfect signature scent.",
+        "Our master perfumers create custom formulations with multiple sampling iterations until we capture your perfect signature scent.",
     },
     {
       number: "03",
-      title: "Quality Testing & Compliance",
+      title: "Quality Assurance",
       description:
-        "Comprehensive testing protocols ensuring IFRA standards, stability testing, and regulatory compliance across markets.",
+        "Rigorous testing protocols including IFRA compliance, stability testing, and multi-point quality verification across all production stages.",
     },
     {
       number: "04",
-      title: "Bulk Production",
+      title: "Scaled Production",
       description:
-        "State-of-the-art manufacturing with precision equipment and multi-stage quality verification at every production phase.",
+        "Advanced manufacturing with precision equipment and real-time quality monitoring to ensure batch consistency at any volume.",
     },
     {
       number: "05",
-      title: "Packaging & Delivery",
+      title: "Logistics & Delivery",
       description:
-        "Professional packaging solutions and logistics management ensuring your products reach market on schedule.",
+        "White-glove packaging, global shipping coordination, and on-time delivery to get your products to market seamlessly.",
     },
   ];
 
@@ -100,152 +128,268 @@ export default function AboutPage() {
     {
       title: "Premium Ingredients",
       description:
-        "Sourcing only the finest raw materials from established fragrance houses and certified suppliers globally.",
+        "Sourcing the finest raw materials from certified global suppliers and established fragrance houses.",
+      metric: "100+",
+      metricLabel: "Premium Sources",
     },
     {
       title: "Strict Quality Control",
       description:
-        "Multi-tiered testing and validation processes ensuring every batch meets our exacting standards.",
+        "Multi-tiered testing and validation ensuring every batch exceeds industry standards.",
+      metric: "15",
+      metricLabel: "Quality Checkpoints",
     },
     {
-      title: "Scalable Production",
+      title: "Scalable Infrastructure",
       description:
-        "Advanced manufacturing infrastructure capable of growing alongside your business demands.",
+        "State-of-the-art facilities capable of growing alongside your business demands.",
+      metric: "1M+",
+      metricLabel: "Annual Capacity",
     },
     {
-      title: "Reliable Timelines",
+      title: "Expert Team",
       description:
-        "Proven track record of on-time delivery with transparent project management and communication.",
-    },
-    {
-      title: "Long-term Partnerships",
-      description:
-        "Building enduring relationships through dedicated support, flexibility, and mutual growth commitment.",
+        "Master perfumers, chemists, and production specialists dedicated exclusively to B2B excellence.",
+      metric: "50+",
+      metricLabel: "Industry Experts",
     },
   ];
 
   const coreValues = [
     {
+      icon: "🤝",
       title: "Trust",
       description:
-        "Building every partnership on transparency, ethical practices, and unwavering reliability.",
+        "Building partnerships on transparency, ethical practices, and unwavering reliability in every interaction.",
     },
     {
-      title: "Consistency",
+      icon: "⚡",
+      title: "Excellence",
       description:
-        "Delivering the same exceptional quality across every batch, every order, every time.",
+        "Delivering exceptional quality across every batch, every order, every time without compromise.",
     },
     {
+      icon: "🚀",
       title: "Innovation",
       description:
-        "Continuously evolving our formulations, processes, and services to exceed industry standards.",
+        "Continuously evolving formulations, processes, and services to stay ahead of industry trends.",
     },
     {
+      icon: "💎",
       title: "Partnership",
       description:
-        "Your success is our success—we grow together through collaboration and shared vision.",
+        "Your success is our success. We grow together through collaboration and shared vision.",
     },
   ];
 
   return (
-    <section className="min-h-screen bg-background text-foreground">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-32 md:py-44 lg:py-52">
+    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+      {/* HERO SECTION - Full Screen */}
+      <section className="relative h-screen flex items-center justify-center border-b border-border">
+        {/* Animated gradient background */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.03 }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={fadeInUp}
-            className="max-w-5xl"
+            variants={staggerContainer}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground">
-                B2B Fragrance Excellence
+            <motion.div variants={fadeInUp} className="mb-8">
+              <span className="inline-block font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground border border-border/50 px-6 py-3 rounded-full">
+                B2B Fragrance Manufacturing
               </span>
             </motion.div>
-            <h1 className="font-hero uppercase text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-8 leading-[1.1]">
-              Crafting Fragrances for Brands, Not Just Customers
-            </h1>
-            <p className="font-primary text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl leading-relaxed">
-              Leiuce Diaona Perfumes partners with businesses worldwide to
-              create, manufacture, and deliver premium fragrances at scale.
-            </p>
+
+            <motion.h1
+              variants={fadeInUp}
+              className="font-hero uppercase text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter mb-10 leading-[0.95]"
+            >
+              Crafting
+              <br />
+              <span className="text-primary">Signature Scents</span>
+              <br />
+              For Brands
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="font-primary text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-16"
+            >
+              Where artisanal craftsmanship meets industrial-scale excellence in
+              luxury fragrance manufacturing
+            </motion.p>
+
+            <motion.div
+              variants={fadeInUp}
+              className="flex gap-6 justify-center items-center"
+            >
+              <motion.a
+                href="#story"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-primary text-primary-foreground font-primary px-10 py-5 rounded-full text-lg font-medium hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500"
+              >
+                Our Story
+              </motion.a>
+              <motion.a
+                href="#services"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-border text-foreground font-primary px-10 py-5 rounded-full text-lg font-medium hover:border-primary hover:text-primary transition-all duration-500"
+              >
+                Explore Services
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            delay: 1.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        >
+          <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-primary rounded-full" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="border-b border-border bg-muted/30">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          >
+            {[
+              { value: "20+", label: "Years Excellence" },
+              { value: "500+", label: "Partner Brands" },
+              { value: "1M+", label: "Bottles Annually" },
+              { value: "50+", label: "Countries Served" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={scaleIn}
+                className="text-center"
+              >
+                <div className="font-hero text-5xl md:text-6xl lg:text-7xl text-primary mb-3 tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="font-secondary text-sm tracking-widest uppercase text-muted-foreground">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
       {/* WHO WE ARE */}
-      <section className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <section id="story" className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40 lg:py-48">
+          <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
-              variants={fadeInUp}
+              variants={fadeInLeft}
             >
-              <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground mb-6 block">
-                About Us
+              <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
+                Our Story
               </span>
-              <h2 className="font-title text-4xl md:text-5xl lg:text-6xl mb-8 tracking-tight">
-                Who We Are
+              <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-12 tracking-tight leading-[1.1]">
+                Two Decades of
+                <br />
+                Fragrance Excellence
               </h2>
-              <div className="space-y-6 font-primary text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <div className="space-y-8 font-primary text-lg md:text-xl text-muted-foreground leading-relaxed">
                 <p>
-                  Leiuce Diaona Perfumes stands at the intersection of artisanal
-                  craftsmanship and industrial-scale manufacturing excellence.
-                  For over two decades, we've been the trusted partner for
-                  brands seeking uncompromising quality in fragrance production.
+                  Leiuce Diaona Perfumes was born from a singular vision: to
+                  bridge the gap between artisanal perfumery and
+                  industrial-scale manufacturing without sacrificing an ounce of
+                  quality.
                 </p>
                 <p>
-                  Our state-of-the-art facilities marry time-honored perfumery
-                  traditions with cutting-edge manufacturing technology,
-                  enabling us to deliver fragrances that exceed industry
-                  benchmarks while maintaining the scalability modern businesses
-                  demand.
+                  For over 20 years, we've partnered with emerging boutiques and
+                  established multinational brands alike, transforming fragrance
+                  visions into market-ready products that captivate and inspire.
                 </p>
                 <p>
-                  From emerging private-label ventures to established
-                  multinational retailers, we understand the nuanced challenges
-                  of bringing fragrances to market. Our dedicated team of master
-                  perfumers, chemists, and production specialists work
-                  exclusively in the B2B space, ensuring every partnership
-                  receives the strategic focus and technical expertise it
-                  deserves.
+                  Our state-of-the-art Los Angeles facility combines
+                  time-honored perfumery traditions with cutting-edge
+                  technology, enabling us to deliver exceptional fragrances at
+                  any scale while maintaining the personal touch that defines
+                  luxury.
                 </p>
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mt-12 grid grid-cols-2 gap-8"
+              >
+                <div className="bg-card border border-border rounded-2xl p-6">
+                  <div className="font-hero text-4xl text-primary mb-2">
+                    98%
+                  </div>
+                  <div className="font-secondary text-sm text-muted-foreground">
+                    Client Retention Rate
+                  </div>
+                </div>
+                <div className="bg-card border border-border rounded-2xl p-6">
+                  <div className="font-hero text-4xl text-primary mb-2">
+                    24h
+                  </div>
+                  <div className="font-secondary text-sm text-muted-foreground">
+                    Average Response Time
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
-              variants={scaleIn}
+              variants={fadeInRight}
               className="relative"
             >
-              <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/5] bg-muted rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1200&q=90"
-                  alt="Leiuce Diaona Perfumes manufacturing facility"
+                  src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=90"
+                  alt="Luxury perfume laboratory"
                   className="w-full h-full object-cover"
                 />
               </div>
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute -bottom-8 -left-8 bg-card border border-border rounded-xl p-6 shadow-xl"
+                className="absolute -bottom-12 -left-12 bg-primary text-primary-foreground rounded-2xl p-8 shadow-2xl"
               >
-                <p className="font-ibm text-5xl font-bold mb-2">20+</p>
-                <p className="font-secondary text-sm text-muted-foreground">
-                  Years of Excellence
-                </p>
+                <div className="font-hero text-6xl mb-2">500+</div>
+                <div className="font-secondary text-sm">
+                  Trusted Partner Brands
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -253,24 +397,23 @@ export default function AboutPage() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="border-b border-border bg-muted/20">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
+      <section id="services" className="border-b border-border bg-muted/20">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-120px" }}
             variants={fadeInUp}
-            className="mb-16 md:mb-20"
+            className="text-center mb-20 md:mb-28"
           >
-            <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground mb-6 block">
+            <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
               Our Services
             </span>
-            <h2 className="font-title text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight">
               What We Do
             </h2>
-            <p className="font-primary text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
-              Comprehensive B2B fragrance solutions engineered to transform your
-              vision into market-ready products.
+            <p className="font-primary text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Comprehensive B2B solutions from concept to delivery
             </p>
           </motion.div>
 
@@ -279,22 +422,23 @@ export default function AboutPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-6 md:gap-8"
+            className="grid md:grid-cols-2 gap-8"
           >
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
-                whileHover={{
-                  y: -6,
-                  transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] },
-                }}
-                className="bg-card border border-border rounded-2xl p-8 md:p-10 hover:shadow-2xl transition-shadow duration-500"
+                variants={scaleIn}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="group bg-card border border-border rounded-3xl p-10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
               >
-                <h3 className="font-title text-2xl md:text-3xl mb-4 tracking-tight">
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                  {service.icon}
+                </div>
+                <h3 className="font-title text-2xl md:text-3xl mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="font-primary text-lg text-muted-foreground leading-relaxed">
+                <p className="font-secondary text-lg text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
@@ -305,23 +449,22 @@ export default function AboutPage() {
 
       {/* OUR PROCESS */}
       <section className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40 lg:py-48">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-120px" }}
             variants={fadeInUp}
-            className="mb-16 md:mb-20"
+            className="text-center mb-20 md:mb-28"
           >
-            <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground mb-6 block">
+            <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
               How We Work
             </span>
-            <h2 className="font-title text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight">
+            <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight">
               Our Process
             </h2>
-            <p className="font-primary text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
-              A meticulously designed workflow that ensures quality, efficiency,
-              and partnership excellence at every stage.
+            <p className="font-primary text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A refined workflow ensuring excellence at every stage
             </p>
           </motion.div>
 
@@ -330,21 +473,23 @@ export default function AboutPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="space-y-8 md:space-y-12"
+            className="max-w-5xl mx-auto space-y-16"
           >
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="grid md:grid-cols-12 gap-6 md:gap-10 items-start pb-8 md:pb-12 border-b border-border last:border-b-0"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.3 }}
+                className="group grid md:grid-cols-12 gap-8 items-start"
               >
                 <div className="md:col-span-2">
-                  <span className="font-ibm text-6xl md:text-7xl font-light text-muted-foreground/20">
+                  <span className="font-hero text-7xl md:text-8xl font-light text-primary/20 group-hover:text-primary/40 transition-colors duration-500">
                     {step.number}
                   </span>
                 </div>
-                <div className="md:col-span-10">
-                  <h3 className="font-title text-2xl md:text-3xl mb-4 tracking-tight">
+                <div className="md:col-span-10 border-l-2 border-border group-hover:border-primary pl-8 transition-colors duration-500">
+                  <h3 className="font-title text-2xl md:text-3xl lg:text-4xl mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">
                     {step.title}
                   </h3>
                   <p className="font-primary text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -359,19 +504,130 @@ export default function AboutPage() {
 
       {/* WHY CHOOSE US */}
       <section className="border-b border-border bg-muted/20">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-120px" }}
+            variants={fadeInUp}
+            className="text-center mb-20 md:mb-28"
+          >
+            <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
+              Our Strengths
+            </span>
+            <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight">
+              Why Choose Us
+            </h2>
+            <p className="font-primary text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Unmatched expertise in luxury fragrance manufacturing
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-8"
+          >
+            {strengths.map((strength, index) => (
+              <motion.div
+                key={index}
+                variants={scaleIn}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="group bg-card border border-border rounded-3xl p-10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <h3 className="font-title text-2xl md:text-3xl tracking-tight group-hover:text-primary transition-colors duration-300">
+                    {strength.title}
+                  </h3>
+                  <div className="text-right">
+                    <div className="font-hero text-3xl text-primary">
+                      {strength.metric}
+                    </div>
+                    <div className="font-secondary text-xs text-muted-foreground">
+                      {strength.metricLabel}
+                    </div>
+                  </div>
+                </div>
+                <p className="font-secondary text-lg text-muted-foreground leading-relaxed">
+                  {strength.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* VISION & VALUES */}
+      <section className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40 lg:py-48">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-120px" }}
+            variants={fadeInUp}
+            className="text-center mb-20 md:mb-28"
+          >
+            <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
+              Our Foundation
+            </span>
+            <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-12 tracking-tight">
+              Vision & Values
+            </h2>
+            <p className="font-primary text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              To redefine B2B fragrance manufacturing by becoming the world's
+              most trusted partner—where brands discover not just a supplier,
+              but a committed collaborator invested in their success.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {coreValues.map((value, index) => (
+              <motion.div
+                key={index}
+                variants={scaleIn}
+                whileHover={{ y: -8, scale: 1.05 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="group text-center"
+              >
+                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                  {value.icon}
+                </div>
+                <h3 className="font-title text-2xl md:text-3xl mb-4 tracking-tight group-hover:text-primary transition-colors duration-300">
+                  {value.title}
+                </h3>
+                <p className="font-secondary text-base text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* IMAGE SHOWCASE */}
+      <section className="border-b border-border bg-muted/20">
+        <div className="max-w-7xl mx-auto px-6 py-32 md:py-40">
+          <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
-              variants={scaleIn}
-              className="relative order-2 lg:order-1"
+              variants={fadeInLeft}
+              className="relative"
             >
-              <div className="aspect-square bg-muted rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-square bg-muted rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=1200&q=90"
-                  alt="Premium perfume collection"
+                  src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=90"
+                  alt="Premium fragrance collection"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -381,128 +637,73 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
-              variants={staggerContainer}
-              className="order-1 lg:order-2"
+              variants={fadeInRight}
             >
-              <motion.div variants={fadeInUp}>
-                <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground mb-6 block">
-                  Our Strengths
-                </span>
-                <h2 className="font-title text-4xl md:text-5xl lg:text-6xl mb-12 md:mb-16 tracking-tight">
-                  Why Choose Leiuce Diaona Perfumes
-                </h2>
-              </motion.div>
-
-              <div className="space-y-8 md:space-y-10">
-                {strengths.map((strength, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className="border-l-2 border-border pl-6 md:pl-8 hover:border-primary transition-colors duration-500"
-                  >
-                    <h3 className="font-title text-xl md:text-2xl mb-3 tracking-tight">
-                      {strength.title}
-                    </h3>
-                    <p className="font-secondary text-base md:text-lg text-muted-foreground leading-relaxed">
-                      {strength.description}
-                    </p>
-                  </motion.div>
-                ))}
+              <span className="font-secondary text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 block">
+                Our Commitment
+              </span>
+              <h2 className="font-title text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-[1.1]">
+                Crafting Excellence
+                <br />
+                <span className="text-primary">Every Day</span>
+              </h2>
+              <div className="space-y-6 font-primary text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p>
+                  Every bottle that leaves our facility represents our
+                  unwavering commitment to perfection. From ingredient sourcing
+                  to final packaging, we maintain the highest standards in the
+                  industry.
+                </p>
+                <p>
+                  Our dedicated team of master perfumers, chemists, and
+                  production specialists work tirelessly to ensure your brand
+                  receives not just a product, but a masterpiece that defines
+                  luxury.
+                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* VISION & VALUES */}
-      <section className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-120px" }}
-              variants={fadeInUp}
-              className="text-center mb-16 md:mb-20"
-            >
-              <span className="font-secondary text-sm tracking-widest uppercase text-muted-foreground mb-6 block">
-                Our Foundation
-              </span>
-              <h2 className="font-title text-4xl md:text-5xl lg:text-6xl mb-8 tracking-tight">
-                Vision & Values
-              </h2>
-              <p className="font-primary text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Our vision is to redefine B2B fragrance manufacturing by
-                becoming the world's most trusted partner—where brands discover
-                not merely a supplier, but a committed collaborator deeply
-                invested in their enduring success.
-              </p>
-            </motion.div>
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.05 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0 bg-gradient-to-tr from-primary via-transparent to-primary/30"
+        />
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-6 md:gap-8"
-            >
-              {coreValues.map((value, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  whileHover={{
-                    scale: 1.02,
-                    transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] },
-                  }}
-                  className="bg-card border border-border rounded-2xl p-8 md:p-10"
-                >
-                  <h3 className="font-title text-2xl md:text-3xl mb-4 tracking-tight">
-                    {value.title}
-                  </h3>
-                  <p className="font-secondary text-lg text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* B2B CALL TO ACTION */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-40">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40 lg:py-48">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-5xl mx-auto text-center"
           >
-            <h2 className="font-title text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 tracking-tight leading-[1.1]">
-              Let's Build Your Fragrance Brand Together
+            <h2 className="font-title text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-10 tracking-tight leading-[1.05]">
+              Let's Build Your
+              <br />
+              <span className="text-primary">Fragrance Legacy</span>
             </h2>
-            <p className="font-primary text-xl md:text-2xl mb-12 md:mb-16 opacity-95 leading-relaxed">
-              Ready to create exceptional fragrances that define your brand
-              identity? Our team at Leiuce Diaona Perfumes is here to transform
-              your vision into reality.
+            <p className="font-primary text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-16 leading-relaxed">
+              Partner with us to create exceptional fragrances that define your
+              brand
             </p>
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3, ease: [0.25, 0.4, 0.25, 1] },
-              }}
-              whileTap={{
-                scale: 0.98,
-                transition: { duration: 0.2 },
-              }}
-              className="bg-background text-foreground font-primary px-12 py-5 rounded-xl text-lg md:text-xl font-medium hover:shadow-2xl transition-shadow duration-500"
+            <motion.a
+              href="/contactus"
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-primary text-primary-foreground font-primary px-16 py-6 rounded-full text-xl font-medium hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500"
             >
-              Start a Partnership
-            </motion.button>
+              Start Your Journey
+            </motion.a>
           </motion.div>
         </div>
       </section>
-    </section>
+    </div>
   );
 }
