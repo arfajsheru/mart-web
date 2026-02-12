@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,17 +17,18 @@ export default function ContactPage() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   // Smooth, luxury animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.9,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    },
-  };
+ const fadeInUp: Variants = {
+   hidden: { opacity: 0, y: 40 },
+   visible: {
+     opacity: 1,
+     y: 0,
+     transition: {
+       duration: 0.9,
+       ease: [0.25, 0.4, 0.25, 1] as const,
+     },
+   },
+ };
+
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -39,17 +41,18 @@ export default function ContactPage() {
     },
   };
 
-  const scaleIn = {
+  const scaleIn: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.4, 0.25, 1],
+        ease: [0.25, 0.4, 0.25, 1] as const,
       },
     },
   };
+
 
   const contactInfo = [
     {
