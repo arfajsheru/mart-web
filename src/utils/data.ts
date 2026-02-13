@@ -7,13 +7,20 @@ import Perfume2 from "../images/perfume2.jpg";
 import Perfume3 from "../images/perfume3.jpg";
 import Perfume4 from "../images/perfume4.jpg";
 import Perfume5 from "../images/perfume5.jpg";
+import Cloth1 from "../images/cloth1.jpg";
+import Cloth2 from "../images/cloth2.jpg"
+import Cloth3 from "../images/cloth3.jpg";
+import Cloth4 from "../images/cloth4.jpg";
+import Cloth5 from "../images/cloth5.jpg";
+import Cloth6 from "../images/cloth6.jpg";
+import Cloth7 from "../images/cloth7.jpg";
 
 export interface CarouselImage {
   src: StaticImageData;
   alt: string;
 }
 
-export const newArrivalImages: CarouselImage[] = [
+export const newArrivalPerfume: CarouselImage[] = [
   {
     src: Perfume1,
     alt: "Luxury perfume new arrival bottle showcase",
@@ -36,7 +43,36 @@ export const newArrivalImages: CarouselImage[] = [
   },
 ];
 
-
+export const newArrivalCloth: CarouselImage[] = [
+  {
+    src: Cloth1,
+    alt: "New arrival classic casual wear collection",
+  },
+  {
+    src: Cloth2,
+    alt: "Latest fashion denim and smart casual styles",
+  },
+  {
+    src: Cloth3,
+    alt: "Trendy streetwear new season launch",
+  },
+  {
+    src: Cloth4,
+    alt: "Premium formal wear new arrival showcase",
+  },
+  {
+    src: Cloth5,
+    alt: "Modern ethnic wear fresh collection",
+  },
+  {
+    src: Cloth6,
+    alt: "Seasonal fashion essentials latest drop",
+  },
+  {
+    src: Cloth7,
+    alt: "Contemporary lifestyle clothing new arrivals",
+  },
+];
 
 export interface SingleProduct {
   id: number;
@@ -50,35 +86,8 @@ export interface SingleProduct {
   rating?: number;
 }
 
-export const singleProduct: SingleProduct = {
-  id: 101,
-  name: "Oud Royale",
-  category: "Perfume",
-  price: 2499,
-  currency: "₹",
-  image: Perfume4,
-  isNew: true,
-  isBestSeller: false,
-  rating: 4.6,
-};
-
-
-
-
-
-export interface SingleProduct {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  currency: string;
-  image: StaticImageData;
-  isNew?: boolean;
-  isBestSeller?: boolean;
-  rating?: number;
-}
-
-export const products: SingleProduct[] = [
+// perfume products data
+export const Perfumeproducts: SingleProduct[] = [
   {
     id: 1,
     name: "Berry",
@@ -276,5 +285,207 @@ export const products: SingleProduct[] = [
     isNew: false,
     isBestSeller: true,
     rating: 4.8,
+  },
+];
+
+// cloth products data
+export const clothingProducts: SingleProduct[] = [
+  {
+    id: 1,
+    name: "Classic White Shirt",
+    category: "Clothing",
+    price: 1499,
+    currency: "₹",
+    image: Cloth1,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.4,
+  },
+  {
+    id: 2,
+    name: "Slim Fit Denim",
+    category: "Clothing",
+    price: 2199,
+    currency: "₹",
+    image: Cloth1,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.7,
+  },
+  {
+    id: 3,
+    name: "Casual Polo T-Shirt",
+    category: "Clothing",
+    price: 1299,
+    currency: "₹",
+    image: Cloth3,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.3,
+  },
+  {
+    id: 4,
+    name: "Formal Blazer",
+    category: "Clothing",
+    price: 3499,
+    currency: "₹",
+    image: Cloth4,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.8,
+  },
+  {
+    id: 5,
+    name: "Cotton Kurta",
+    category: "Clothing",
+    price: 1799,
+    currency: "₹",
+    image: Cloth5,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.5,
+  },
+  {
+    id: 6,
+    name: "Checked Casual Shirt",
+    category: "Clothing",
+    price: 1599,
+    currency: "₹",
+    image: Cloth6,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.6,
+  },
+  {
+    id: 7,
+    name: "Regular Fit Chinos",
+    category: "Clothing",
+    price: 1999,
+    currency: "₹",
+    image: Cloth7,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.4,
+  },
+  {
+    id: 8,
+    name: "Graphic Street T-Shirt",
+    category: "Clothing",
+    price: 999,
+    currency: "₹",
+    image: Cloth3,
+    isNew: true,
+    isBestSeller: true,
+    rating: 4.7,
+  },
+  {
+    id: 9,
+    name: "Winter Hoodie",
+    category: "Clothing",
+    price: 2299,
+    currency: "₹",
+    image: Cloth4,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.8,
+  },
+  {
+    id: 10,
+    name: "Linen Summer Shirt",
+    category: "Clothing",
+    price: 1699,
+    currency: "₹",
+    image: Cloth5,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.3,
+  },
+  {
+    id: 11,
+    name: "Athleisure Joggers",
+    category: "Clothing",
+    price: 1899,
+    currency: "₹",
+    image: Cloth6,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.6,
+  },
+  {
+    id: 12,
+    name: "Denim Jacket",
+    category: "Clothing",
+    price: 2999,
+    currency: "₹",
+    image: Cloth2,
+    isNew: true,
+    isBestSeller: true,
+    rating: 4.9,
+  },
+  {
+    id: 13,
+    name: "Ethnic Nehru Jacket",
+    category: "Clothing",
+    price: 2599,
+    currency: "₹",
+    image: Cloth7,
+    isNew: false,
+    isBestSeller: false,
+    rating: 4.4,
+  },
+  {
+    id: 14,
+    name: "Premium Cotton Trousers",
+    category: "Clothing",
+    price: 2199,
+    currency: "₹",
+    image: Cloth4,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.5,
+  },
+  {
+    id: 15,
+    name: "Oversized Streetwear Tee",
+    category: "Clothing",
+    price: 1199,
+    currency: "₹",
+    image: Cloth5,
+    isNew: true,
+    isBestSeller: true,
+    rating: 4.7,
+  },
+  {
+    id: 16,
+    name: "Wool Blend Sweater",
+    category: "Clothing",
+    price: 2799,
+    currency: "₹",
+    image: Cloth6,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.8,
+  },
+  {
+    id: 17,
+    name: "Smart Casual Shirt",
+    category: "Clothing",
+    price: 1499,
+    currency: "₹",
+    image: Cloth7,
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.3,
+  },
+  {
+    id: 18,
+    name: "Tailored Fit Suit Pants",
+    category: "Clothing",
+    price: 2399,
+    currency: "₹",
+    image: Cloth3,
+    isNew: false,
+    isBestSeller: true,
+    rating: 4.6,
   },
 ];
